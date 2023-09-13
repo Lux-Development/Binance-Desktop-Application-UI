@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1506A631-B3C6-4A0C-ABB1-15B180BE8612}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BinanceAPI</RootNamespace>
+    <AssemblyName>BinanceAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Binance_Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Siticone.UI">
+      <HintPath>..\..\..\..\..\..\[2023 Latest] Lux Rebuild V2\Lux Software\Lux Software\bin\Debug\Siticone.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI.Designer.cs">
+      <DependentUpon>UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Account]\software_settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Account]\software_settings.Designer.cs">
+      <DependentUpon>software_settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Account]\binance_account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Account]\binance_account.Designer.cs">
+      <DependentUpon>binance_account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Account]\[Binance]\Binance_Currency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Account]\[Binance]\Binance_Currency.Designer.cs">
+      <DependentUpon>Binance_Currency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Account]\[Binance]\Binance_Terms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Account]\[Binance]\Binance_Terms.Designer.cs">
+      <DependentUpon>Binance_Terms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Account]\[Binance]\Binance_Restrictions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Account]\[Binance]\Binance_Restrictions.Designer.cs">
+      <DependentUpon>Binance_Restrictions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Account]\[Binance]\Binance_API.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Account]\[Binance]\Binance_API.Designer.cs">
+      <DependentUpon>Binance_API.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Account]\[Software]\Pincode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Account]\[Software]\Pincode.Designer.cs">
+      <DependentUpon>Pincode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Account]\[Software]\Appearance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Account]\[Software]\Appearance.Designer.cs">
+      <DependentUpon>Appearance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Account]\[Software]\Software_Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Account]\[Software]\Software_Profile.Designer.cs">
+      <DependentUpon>Software_Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Tron.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Tron.Designer.cs">
+      <DependentUpon>Tron.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\BinanceUSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\BinanceUSD.Designer.cs">
+      <DependentUpon>BinanceUSD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Solana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Solana.Designer.cs">
+      <DependentUpon>Solana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Monero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Monero.Designer.cs">
+      <DependentUpon>Monero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\BitcoinCash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\BitcoinCash.Designer.cs">
+      <DependentUpon>BitcoinCash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Dodgecoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Dodgecoin.Designer.cs">
+      <DependentUpon>Dodgecoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Cardano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Cardano.Designer.cs">
+      <DependentUpon>Cardano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Dai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Dai.Designer.cs">
+      <DependentUpon>Dai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\ShibaInu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\ShibaInu.Designer.cs">
+      <DependentUpon>ShibaInu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Polkadot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Polkadot.Designer.cs">
+      <DependentUpon>Polkadot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Litecoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Litecoin.Designer.cs">
+      <DependentUpon>Litecoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\USD Coin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\USD Coin.Designer.cs">
+      <DependentUpon>USD Coin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Ripple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Ripple.Designer.cs">
+      <DependentUpon>Ripple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\BNB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\BNB.Designer.cs">
+      <DependentUpon>BNB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Tether.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Tether.Designer.cs">
+      <DependentUpon>Tether.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Ethereum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Ethereum.Designer.cs">
+      <DependentUpon>Ethereum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Bitcoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[BalanceFinal]\Bitcoin.Designer.cs">
+      <DependentUpon>Bitcoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\_Search_NoResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\_Search_NoResults.Designer.cs">
+      <DependentUpon>_Search_NoResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_DAI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_DAI.Designer.cs">
+      <DependentUpon>Search_DAI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_TRX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_TRX.Designer.cs">
+      <DependentUpon>Search_TRX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_SOL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_SOL.Designer.cs">
+      <DependentUpon>Search_SOL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_XMR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_XMR.Designer.cs">
+      <DependentUpon>Search_XMR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_SHIB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_SHIB.Designer.cs">
+      <DependentUpon>Search_SHIB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_DOT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_DOT.Designer.cs">
+      <DependentUpon>Search_DOT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_LTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_LTC.Designer.cs">
+      <DependentUpon>Search_LTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_Bitcoincash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_Bitcoincash.Designer.cs">
+      <DependentUpon>Search_Bitcoincash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_BUSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_BUSD.Designer.cs">
+      <DependentUpon>Search_BUSD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_BNB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_BNB.Designer.cs">
+      <DependentUpon>Search_BNB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_ADA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_ADA.Designer.cs">
+      <DependentUpon>Search_ADA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_DOGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_DOGE.Designer.cs">
+      <DependentUpon>Search_DOGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_XRP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_XRP.Designer.cs">
+      <DependentUpon>Search_XRP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_USDC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_USDC.Designer.cs">
+      <DependentUpon>Search_USDC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_USDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_USDT.Designer.cs">
+      <DependentUpon>Search_USDT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_Ethereum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_Ethereum.Designer.cs">
+      <DependentUpon>Search_Ethereum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_Bitcoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\is this what you are looking for\Search_Bitcoin.Designer.cs">
+      <DependentUpon>Search_Bitcoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\whyaremyassetslocked.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\[Data]\whyaremyassetslocked.Designer.cs">
+      <DependentUpon>whyaremyassetslocked.cs</DependentUpon>
+    </Compile>
+    <Compile Include="[Balances]\_Favourited_balance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="[Balances]\_Favourited_balance.Designer.cs">
+      <DependentUpon>_Favourited_balance.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI.resx">
+      <DependentUpon>UI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Account]\software_settings.resx">
+      <DependentUpon>software_settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Account]\binance_account.resx">
+      <DependentUpon>binance_account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Account]\[Binance]\Binance_Currency.resx">
+      <DependentUpon>Binance_Currency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Account]\[Binance]\Binance_Terms.resx">
+      <DependentUpon>Binance_Terms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Account]\[Binance]\Binance_Restrictions.resx">
+      <DependentUpon>Binance_Restrictions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Account]\[Binance]\Binance_API.resx">
+      <DependentUpon>Binance_API.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Account]\[Software]\Pincode.resx">
+      <DependentUpon>Pincode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Account]\[Software]\Appearance.resx">
+      <DependentUpon>Appearance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Account]\[Software]\Software_Profile.resx">
+      <DependentUpon>Software_Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\Tron.resx">
+      <DependentUpon>Tron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\BinanceUSD.resx">
+      <DependentUpon>BinanceUSD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\Solana.resx">
+      <DependentUpon>Solana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\Monero.resx">
+      <DependentUpon>Monero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\BitcoinCash.resx">
+      <DependentUpon>BitcoinCash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\Dodgecoin.resx">
+      <DependentUpon>Dodgecoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\Cardano.resx">
+      <DependentUpon>Cardano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\Dai.resx">
+      <DependentUpon>Dai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\ShibaInu.resx">
+      <DependentUpon>ShibaInu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\Polkadot.resx">
+      <DependentUpon>Polkadot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\Litecoin.resx">
+      <DependentUpon>Litecoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\USD Coin.resx">
+      <DependentUpon>USD Coin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\Ripple.resx">
+      <DependentUpon>Ripple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\BNB.resx">
+      <DependentUpon>BNB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\Tether.resx">
+      <DependentUpon>Tether.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\Ethereum.resx">
+      <DependentUpon>Ethereum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[BalanceFinal]\Bitcoin.resx">
+      <DependentUpon>Bitcoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\_Search_NoResults.resx">
+      <DependentUpon>_Search_NoResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_DAI.resx">
+      <DependentUpon>Search_DAI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_TRX.resx">
+      <DependentUpon>Search_TRX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_SOL.resx">
+      <DependentUpon>Search_SOL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_XMR.resx">
+      <DependentUpon>Search_XMR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_SHIB.resx">
+      <DependentUpon>Search_SHIB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_DOT.resx">
+      <DependentUpon>Search_DOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_LTC.resx">
+      <DependentUpon>Search_LTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_Bitcoincash.resx">
+      <DependentUpon>Search_Bitcoincash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_BUSD.resx">
+      <DependentUpon>Search_BUSD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_BNB.resx">
+      <DependentUpon>Search_BNB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_ADA.resx">
+      <DependentUpon>Search_ADA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_DOGE.resx">
+      <DependentUpon>Search_DOGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_XRP.resx">
+      <DependentUpon>Search_XRP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_USDC.resx">
+      <DependentUpon>Search_USDC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_USDT.resx">
+      <DependentUpon>Search_USDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_Ethereum.resx">
+      <DependentUpon>Search_Ethereum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\[Data]\is this what you are looking for\Search_Bitcoin.resx">
+      <DependentUpon>Search_Bitcoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="[Balances]\_Favourited_balance.resx">
+      <DependentUpon>_Favourited_balance.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="[Balances]\[W-D]\Bitcoin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receipt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Binance_Logo.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

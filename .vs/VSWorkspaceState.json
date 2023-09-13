@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BinanceAPI",
+    "\\BinanceAPI\\[Account]",
+    "\\BinanceAPI\\[Account]\\[Binance]",
+    "\\BinanceAPI\\[Account]\\[Software]"
+  ],
+  "SelectedNode": "\\BinanceAPI\\UI.cs",
+  "PreviewInSolutionExplorer": false
+}

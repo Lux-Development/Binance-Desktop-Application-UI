@@ -22,8 +22,7 @@ This is a UI, not a working program, its a design made by me, feel free to use a
 - [ ] Functions
 
 ## Preview
-![binance](https://github.com/joelb-services/Binance-Desktop-UI/assets/144958989/f0460486-6b3c-4226-b7b9-b876b63860b7)
-
+![binance](https://github.com/joelb-services/Binance-Desktop-Application-UI/assets/144958989/e0388552-be30-4eda-9b39-3a736c260a50)
 
 ## Authors
 
